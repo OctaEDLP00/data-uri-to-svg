@@ -1,5 +1,5 @@
 import { extractSvgFromDataUri, formatSvgCode, isValidSvgDataUri, $ } from './index'
-import { EditorSVG } from '../modules/EditorSVG'
+import { EditorSVG } from '~/modules/EditorSVG'
 
 export class SVGConverter {
   private inputElement: HTMLTextAreaElement
