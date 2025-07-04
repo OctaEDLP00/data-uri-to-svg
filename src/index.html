@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/vite.svg"
+    />
+    <title>Data URI to SVG Converter</title>
+    <script
+      type="module"
+      src="/main.ts"
+    ></script>
+    <link
+      href="/style.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen bg-gray-50 text-neutral-800 dark:bg-neutral-800 dark:text-gray-50">
+    <!-- Header -->
+    <header class="flex items-center justify-between border-b border-gray-200">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <h1 class="text-2xl font-light">Data URI to SVG Converter</h1>
+        <p class="mt-1 text-sm">Convert data URIs code to SVG</p>
+      </div>
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <ul>
+          <li>
+            <a
+              target="_blank"
+              href="https://github.com/OctaEDLP00/data-uri-to-svg"
+              class="flex items-center gap-2 space-y-2"
+            >
+              <svg class="h-5 w-5">
+                <use href="/assets/sprite.svg#github"></use>
+              </svg>
+              Give me a Star
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <!-- Input Section -->
+        <section class="lg:col-span-1">
+          <div class="rounded-lg border border-gray-200 p-6 shadow-sm">
+            <h2 class="mb-4 text-lg font-medium">Data URI</h2>
+            <textarea
+              id="dataUriSvg"
+              placeholder="Paste here your data URI (data:image/svg+xml)"
+              class="h-64 w-full resize-none rounded-md border border-gray-300 p-4 font-mono text-sm focus:border-transparent focus:ring-2 focus:ring-blue-500"
+            ></textarea>
+            <div class="mt-4">
+              <button
+                id="transformBtn"
+                class="flex w-full items-center gap-2 space-y-2 rounded-md bg-blue-600 px-4 py-2 font-medium transition-colors duration-200 hover:bg-blue-700"
+              >
+                <svg class="h-5 w-5">
+                  <use
+                    href="/assets/sprite.svg#convert"
+                    class="convert-icon h-5 w-5"
+                  ></use>
+                </svg>
+                Convert
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Preview Section -->
+        <section class="lg:col-span-1">
+          <div class="h-full rounded-lg border border-gray-200 p-6 shadow-sm">
+            <h2 class="mb-4 text-lg font-medium">Preview</h2>
+            <div
+              class="flex h-80 items-center justify-center rounded-lg border-2 border-dashed border-gray-300"
+            >
+              <iframe
+                class="size-full"
+                id="preview"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <!-- SVG Code Output Section -->
+        <section class="lg:col-span-1">
+          <div class="rounded-lg border border-gray-200 p-6 shadow-sm">
+            <div class="mb-4 flex items-center justify-between">
+              <h2 class="text-lg font-medium">SVG Code</h2>
+              <button
+                id="copyBtn"
+                class="flex items-center gap-2 space-x-2 text-sm font-medium text-blue-600 hover:text-blue-800"
+              >
+                <svg class="h-5 w-5">
+                  <use href="/assets/sprite.svg#copy"></use>
+                </svg>
+                Copy
+              </button>
+            </div>
+            <div class="relative">
+              <div
+                id="svgEditor"
+                class="h-64 w-full overflow-hidden rounded-md border border-gray-300"
+              ></div>
+            </div>
+            <div class="mt-4">
+              <button
+                id="downloadSvg"
+                class="flex w-full items-center gap-2 space-x-2 rounded-md bg-blue-600 px-4 py-2 font-medium transition-colors duration-200 hover:bg-blue-700"
+              >
+                <svg class="h-5 w-5">
+                  <use href="/assets/sprite.svg#download"></use>
+                </svg>
+                Download SVG
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Instructions Section -->
+      <section class="mt-8 rounded-lg border border-gray-200 p-6 shadow-sm">
+        <h3 class="mb-4 text-center text-xl font-bold uppercase">How to use?</h3>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div class="text-center">
+            <div
+              class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-300"
+            >
+              <span class="font-semibold text-blue-600">1</span>
+            </div>
+            <h4 class="mb-2 font-medium">Paste Data URI</h4>
+            <p class="text-sm">
+              <span title="Copy and Paste">C&P</span> Data URI in the input field
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-300"
+            >
+              <span class="font-semibold text-blue-600">2</span>
+            </div>
+            <h4 class="mb-2 font-medium">Preview</h4>
+            <p class="text-sm">Visualize SVG in real time</p>
+          </div>
+          <div class="text-center">
+            <div
+              class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-300"
+            >
+              <span class="font-semibold text-blue-600">3</span>
+            </div>
+            <h4 class="mb-2 font-medium">Get Code</h4>
+            <p class="text-sm">Copy or download SVG code</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-12 border-t border-gray-200">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <p class="text-center text-sm">Convert Data URI to SVG - Minimalist and effcient Tool</p>
+      </div>
+    </footer>
+  </body>
+</html>

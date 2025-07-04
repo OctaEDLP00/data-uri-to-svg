@@ -1,0 +1,6 @@
+export { extractSvgFromDataUri } from './extractSvgFromDataUri.ts'
+export { formatSvgCode } from './formatSvgCode.ts'
+export { isElement } from './isElement.ts'
+export { isValidSvgDataUri } from './isValidSvgDataUri.ts'
+export { $ } from './util-dom.ts'
+export { SVGConverter } from './SVGConverter.ts'

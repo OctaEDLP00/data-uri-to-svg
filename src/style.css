@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+.hljs {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+pre {
+  margin: 0 !important;
+}
