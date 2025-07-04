@@ -1,4 +1,4 @@
-import { SVGConverter } from './utils'
+import { SVGConverter } from './utils/index.ts'
 
 new SVGConverter(
   '#dataUriSvg', // Selector del textarea de entrada
